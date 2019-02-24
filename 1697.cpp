@@ -9,9 +9,15 @@ void searching(int a, int b, int cnt) {
 		mini = cnt;
 		return;
 	}
-	searching(a - 1, b, cnt+1);
-	searching(a + 1, b, cnt+1);
-	searching(2 * a, b, cnt+1);
+	if (b % 2 == 0) {
+		searching(a, b/2, cnt + 1);
+		searching(a, b-1, cnt + 1);
+		searching(a, b+1, cnt + 1);
+	}
+	else {
+		searching(a, b - 1, cnt + 1);
+		searching(a, b + 1, cnt + 1);
+	}
 }
 int main(void) {
 	int N, K;
