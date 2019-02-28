@@ -1,3 +1,5 @@
+import sys
+sys.setrecursionlimit(100000)
 a=list()
 visit=list()
 def checking(num):
@@ -32,7 +34,6 @@ for i in range(num):
     tmp=input()
     a.append(list(tmp))
     visit.append(list(range(num)))
-    
 init(num)
 cnt1=checking(num)
 init_RG(num)
