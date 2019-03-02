@@ -12,6 +12,7 @@ def DFS(linked,visit,i):
 N,M=input().split()
 N=int(N)
 M=int(M)
+
 linked=list()
 visit=list(range(N))
 init_lin(linked,N)
