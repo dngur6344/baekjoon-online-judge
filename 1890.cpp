@@ -1,7 +1,7 @@
 #include<iostream>
 using namespace std;
 int arr[100][100];
-int res[100][100];
+long int res[100][100];
 int main(void){
 	int N;
 	cin>>N;
@@ -16,6 +16,7 @@ int main(void){
 		for(int j=0;j<N;j++){
 			int val=arr[i][j];
 			if(i==N-1&&j==N-1)break;
+			if(arr[i][j]==0||res[i][j]==0)continue;
 			if(val+i<N){
 				res[val+i][j]+=res[i][j];
 			}
