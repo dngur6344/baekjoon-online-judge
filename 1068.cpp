@@ -18,15 +18,15 @@ int main(void) {
 	}
 	while (arr.empty() != true) {
 		for (int i = 0; i < dq.size(); i++) {
+			dq[arr.front()] = -2;
 			if (dq[i] == arr.front()) {
 				arr.push_back(i);
-				dq[arr.front()] = -2;
 			}
 		}
 		arr.pop_front();
 	}
 	for (int i = 0; i < dq.size(); i++) {
-		if (dq[i] == -2 || dq[i] == -1)continue;
+		if (dq[i] == -2)continue;
 		for (int j = 0; j < dq.size(); j++) {
 			if (i == dq[j]) {
 				arr.push_back(j);
@@ -44,7 +44,7 @@ int main(void) {
 		}
 	}
 	for (int i = 0; i < dq.size(); i++) {
-		if (dq[i] != -2 && dq[i] != -1)cnt++;
+		if (dq[i] != -2)cnt++;
 	}
 	cout << cnt << endl;
 	return 0;
